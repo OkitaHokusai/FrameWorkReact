@@ -1,8 +1,26 @@
-import React from 'react'
+import React from 'react';
+import {Container, Row, Col} from 'react-bootstrap';
+import LinkPxl from './assets/Link.png';
+import Coin from './assets/coin.gif';
+import Styled from 'styled-components';
+import './assets/coinfloat.css';
+import './assets/NoMatch.css'
 
 export const NoMatch =()=>(
-        <div>
-            <h1>Algo deu errado!</h1>
-            <p>Erro 404 sua página não foi encontrada :c </p>
-        </div>
+
+    <Container id="noresult">
+        <Row>
+            <Col>
+                <h1> ALGO DEU ERRADO!</h1>
+                <p>Essa página que você procura não existe ;w;</p>
+                <p>R.I.P</p>
+            </Col>
+        </Row>
+        <Row>
+        <Col id="animationlink">
+                <img style={{width:200,}}src={Coin} alt="Coin" id='coin'/>
+                <img style={{width:200,}}src={LinkPxl} alt="Link" id='link' />
+            </Col>
+        </Row>
+    </Container>
 )
