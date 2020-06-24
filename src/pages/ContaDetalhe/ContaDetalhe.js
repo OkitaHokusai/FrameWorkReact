@@ -1,8 +1,10 @@
 import React from 'react';
 import {Row,Form,Col, Button,Jumbotron as Jumbo, Spinner} from 'react-bootstrap';
-import {Historicoentrada,Historicosaida } from './components/ContaCard';
+import {Historicoentrada,Historicosaida } from '../../components/ContaCard';
 import styled from 'styled-components';
-import './assets/contacard.css';
+import '../../assets/contacard.css';
+import {Navigationbar} from '../../components/Navbar';
+import {Layout} from '../../components/Layout';
 
 const H2 = styled.h5`
     font-family: 'Exo 2', sans-serif;
@@ -13,6 +15,8 @@ const H2 = styled.h5`
 export const ContaDetalhe = () => (
     
     <>
+    <Navigationbar/>
+    <Layout>
      <Row>
         <H2>Visão Geral:</H2>
         <Jumbo id="categorias-3">
@@ -70,5 +74,6 @@ export const ContaDetalhe = () => (
             <Historicosaida/>
         </Jumbo>
     </Row>
+    </Layout>
     </>
 ) 

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Nav,
     Navbar,
 } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
 
@@ -23,17 +24,40 @@ const Styles = styled.div`
 `;
 
 
-export const Navigationbar = () => (
+export const Navigationbar = () => {
+    
+    const history = useHistory()
+
+    useEffect(()=>{
+        if(localStorage.getItem('session') == null){      
+            history.push('/');
+        }
+    },[]);
+
+    function handleOnClickLink(event){
+        event.preventDefault();
+        history.push(event.target.name);
+    }
+    function handleOnClickLogout(event){
+        event.preventDefault();
+        localStorage.removeItem('session');
+        history.push(event.target.name);
+    }
+    
+    
+
+    return(
     <Styles>
         <Navbar>
-    <Navbar.Brand href="/"><b>FrameWork</b></Navbar.Brand>
+    <Navbar.Brand ><b>FrameWork</b></Navbar.Brand>
     <Nav className="ml-auto">
-      <Nav.Link id="navlink" href="./Principal">Home</Nav.Link>
-      <Nav.Link id="navlink" href="./Contas">Contas</Nav.Link>
-      <Nav.Link id="navlink" href="./Categorias">Categorias</Nav.Link>
-      <Nav.Link id="navlink" href="./Perfil">Perfil</Nav.Link>
+      <Nav.Link id="navlink" onClick={handleOnClickLogout} name="/">Logout</Nav.Link>
+      <Nav.Link id="navlink" onClick={handleOnClickLink} name="/Principal">Home</Nav.Link>
+      <Nav.Link id="navlink" onClick={handleOnClickLink} name="/Contas">Contas</Nav.Link>
+      <Nav.Link id="navlink" onClick={handleOnClickLink} name="/Categorias">Categorias</Nav.Link>
+      <Nav.Link id="navlink" onClick={handleOnClickLink} name="/Perfil">Perfil</Nav.Link>
     </Nav>
   </Navbar>
   <br/>
     </Styles>
-)
+)}

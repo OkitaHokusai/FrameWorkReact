@@ -5,4 +5,4 @@ export const Layout = (props) => (
     <Container>
         {props.children}
     </Container>
-)
+     )

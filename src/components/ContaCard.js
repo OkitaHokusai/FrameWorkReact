@@ -1,5 +1,8 @@
-import React from 'react';
-import {Card,Button,Badge} from 'react-bootstrap';
+import React, {useEffect, useState} from 'react';
+import Categoria from '../classes/Categorias'
+import Conta from '../classes/Contas'
+import {Card,Button} from 'react-bootstrap';
+import {useHistory} from 'react-router-dom'
 import { FaTrash,
          FaSearchPlus,
          FaArrowUp,
@@ -8,24 +11,34 @@ import { FaTrash,
 import '../assets/contacard.css';
 
 
+export const ContaCard = (props) => {
+    const history = useHistory();
 
-export const ContaCard = () => (
+    const objConta = new Conta();
+
+    function handleClickDelete(){
+        const message = objConta.delete(props.id);
+        alert(message);
+        history.go("/Contas");
+    }
+
+    return(
 
     <Card id='conta' style={{ width: '18rem' }}>
        <Card.Body >        
-         <Card.Title>(Insira um nome aqui)</Card.Title>
+         <Card.Title>{props.nome}</Card.Title>
          <Card.Subtitle className="mb-2 text-muted">
-          (Id da conta)
+          {props.tipo}
          </Card.Subtitle>
          <Card.Text>
-           (Tipo da conta)
+           {props.categoria}
          </Card.Text>
             <Card.Link href="./Contas/ContaDetalhe"><Button variant="outline-info"><FaSearchPlus/> Vizualizar</Button></Card.Link>
-            <Card.Link><Button variant="danger" ><FaTrash/>Excluir</Button></Card.Link> 
+            <Card.Link><Button variant="danger" onClick={handleClickDelete}><FaTrash/>Excluir</Button></Card.Link> 
       </Card.Body>
     </Card>
 
-)
+)}
 
 export const EntradasCard = () => (
     
@@ -73,15 +86,24 @@ export const SituaCard = () => (
     </Card>
 )
 
-export const CategoriaBadge = () => (
-   <h5>
-       Carros
-       <Button variant="danger" size="sm" id="excluir">
+export const CategoriaBadge = (props) => {
+    const objCat = new Categoria();
+
+    function handleClickDelete(){
+        const message = objCat.delete(props.id);
+        alert(message);
+        history.go('/');
+    }
+    const history = useHistory();
+    return(
+   <h5 style={props.style}>
+       {props.categoria}
+       <Button variant="danger" size="sm" id="excluir" onClick={handleClickDelete}>
         X
        </Button>
    </h5>
   
-)
+)}
 
 export const Historicoentrada = () => (
     <p><b>24/05/2020</b> Depositado R$100,00 <FaArrowUp/> </p>

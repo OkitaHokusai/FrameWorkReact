@@ -4,13 +4,16 @@ import {Jumbotron,Row,CardDeck} from 'react-bootstrap';
 import {EntradasCard,
         SaidasCard,
         AjudaCard,
-        SituaCard} from './components/ContaCard';
-import './assets/contacard.css';
-
+        SituaCard} from '../../components/ContaCard';
+import '../../assets/contacard.css';
+import {Navigationbar} from '../../components/Navbar';
+import {Layout} from '../../components/Layout';
 
 
 export const Principal = () => (
     <>
+    <Navigationbar/>
+    <Layout>
     <Row>
        <Jumbotron id="menu">
            <CardDeck>
@@ -30,5 +33,6 @@ export const Principal = () => (
     <Row>
         <Jumbotron id="menu">Espaço para o grafico</Jumbotron>
     </Row>
+    </Layout>
     </>
 )

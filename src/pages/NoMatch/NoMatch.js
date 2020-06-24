@@ -1,10 +1,9 @@
 import React from 'react';
 import {Container, Row, Col} from 'react-bootstrap';
-import LinkPxl from './assets/Link.png';
-import Coin from './assets/coin.gif';
-import Styled from 'styled-components';
-import './assets/coinfloat.css';
-import './assets/NoMatch.css'
+import LinkPxl from '../../assets/Link.png';
+import Coin from '../../assets/coin.gif';
+import '../../assets/coinfloat.css';
+import '../../assets/NoMatch.css'
 
 export const NoMatch =()=>(
 
