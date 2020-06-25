@@ -36,11 +36,14 @@ export const LoginForm = () =>{
         console.log(nome, senha)
         let index = usuarios.findIndex(user => user.nome == nome || user.email == nome);
         if(index != -1){
-          index = usuarios.findIndex(user => user.senha === senha);
-          if(index != -1){
+          if(usuarios[index].senha == senha){
+            if(usuarios[index].status == "ativo"){
             localStorage.setItem('session', usuarios[index].id);
             await alert(`Bem vindo: ${usuarios[index].nome}`);
             history.push('/Principal');
+            }else{
+              throw new Error("Conta bloqueada");
+            }
           }else{
             throw new Error("Senha incorreta");
           }

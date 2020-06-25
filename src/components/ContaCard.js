@@ -16,12 +16,17 @@ export const ContaCard = (props) => {
 
     const objConta = new Conta();
 
+
+
     function handleClickDelete(){
         const message = objConta.delete(props.id);
         alert(message);
         history.go("/Contas");
     }
-
+    function handleClickView(event){
+        localStorage.setItem('sessionConta', props.id);
+        history.push(event.target.id);
+    }
     return(
 
     <Card id='conta' style={{ width: '18rem' }}>
@@ -33,58 +38,69 @@ export const ContaCard = (props) => {
          <Card.Text>
            {props.categoria}
          </Card.Text>
-            <Card.Link href="./Contas/ContaDetalhe"><Button variant="outline-info"><FaSearchPlus/> Vizualizar</Button></Card.Link>
+            <Card.Link><Button id="/Contas/ContaDetalhe" onClick={handleClickView} variant="outline-info"><FaSearchPlus/> Vizualizar</Button></Card.Link>
             <Card.Link><Button variant="danger" onClick={handleClickDelete}><FaTrash/>Excluir</Button></Card.Link> 
       </Card.Body>
     </Card>
 
 )}
 
-export const EntradasCard = () => (
+export const EntradasCard = (props) => (
     
     <Card className=" text-white" style={{ width: '18rem' }}>
         <Card.Header className="bg-success"><Card.Title>Entradas <FaArrowUp/></Card.Title></Card.Header>
         <Card.Body id="cardbody">
         <Card.Text>
-            12
+            {props.numero}
         </Card.Text>
         </Card.Body>
     </Card>
 )
 
-export const SaidasCard = () => (
+export const SaidasCard = (props) => (
     
     <Card className=" text-white" style={{ width: '18rem' }}>
         <Card.Header className="bg-warning"><Card.Title>Saidas <FaArrowDown/></Card.Title></Card.Header>
         <Card.Body id="cardbody">
         <Card.Text >
-                4
+                {props.numero}
         </Card.Text>
         </Card.Body>
     </Card>
 )
 
-export const AjudaCard = () => (
+export const AjudaCard = (props) => (
     
     <Card id="helpcard" className="bg-light text-black" style={{ width: '18rem' }}>
-        <Card.Header id="cardhelp"><Card.Title>Precisa de ajuda? </Card.Title></Card.Header>
+        <Card.Header id="cardhelp"><Card.Title> Saldo </Card.Title></Card.Header>
         <Card.Body>
-            <Button id="helpbtn"><FaEnvelope size="18px" /></Button>
-            <br/>
-      
+            {Number(props.valor).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
         </Card.Body>
     </Card>
 )
 
-export const SituaCard = () => (
+export const SituaCard = (props) => {
+
+    if(props.situacao){
+    return(
     
     <Card  className=" text-black text-center" style={{}}>
-        <Card.Header className="bg-info"><Card.Title>Situação </Card.Title></Card.Header>
+        <Card.Header className="bg-success"><Card.Title>Situação </Card.Title></Card.Header>
         <Card.Body>
-            Pelo visto você sabe bem cuidar do seu dinheiro! :)
+        Positivo! Pelo visto você sabe bem cuidar do seu dinheiro! :)
         </Card.Body>
     </Card>
-)
+    )}else{
+    return(
+        <Card  className="text-black text-center" style={{}}>
+            <Card.Header className="bg-danger"><Card.Title>Situação </Card.Title></Card.Header>
+            <Card.Body>
+            Negativo! tente controlar melhor seus gastos :/
+            </Card.Body>
+        </Card>
+        )}
+
+}
 
 export const CategoriaBadge = (props) => {
     const objCat = new Categoria();
@@ -105,10 +121,6 @@ export const CategoriaBadge = (props) => {
   
 )}
 
-export const Historicoentrada = () => (
-    <p><b>24/05/2020</b> Depositado R$100,00 <FaArrowUp/> </p>
-)
-
-export const Historicosaida = () => (
-    <p><b>24/05/2020</b> Sacado R$100,00 em Comercio <FaArrowDown/> </p>
+export const Historicoentrada = (props) => (
+    <p><b>{props.data}</b> Valor: {props.valor} </p>
 )

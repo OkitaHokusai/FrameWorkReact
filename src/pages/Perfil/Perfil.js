@@ -21,7 +21,7 @@ export const Perfil = () => (
     <>
     <Navigationbar/>
     <Layout>
-    <H2>Bem vindo, Okita!</H2>
+    <H2>Bem vindo!</H2>
     <H5>Aqui você pode alterar suas informações</H5>
     <Row>
         <PerfilForm/>

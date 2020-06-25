@@ -34,21 +34,10 @@ export const CadForm = () =>{
     function handleChangeTelefone(event){
         setTelefone(event.target.value);
     }
-
-
-    function validateFields(){
-        if(cep.length < 8){
-            throw new Error('Cep deve conter 8 dígitos');
-        }
-        if(telefone.length < 10){
-            throw new Error('Telefone deve conter 10 dígitos');
-        }
-    }
     
     function handleSubmit(event){
         try{
         event.preventDefault();
-        validateFields();
         axios.get(`http://viacep.com.br/ws/${cep}/json/`).then(response => {
             if(response.data.erro){
                 throw new Error('Cep não existe');
@@ -68,7 +57,7 @@ export const CadForm = () =>{
                 }
                 const objUser = new Usuario();
                 objUser.create(dados);
-                await alert('Usuario criado com sucesso');
+                alert('Usuario criado com sucesso');
                 history.push('/');
             }
         ).catch(error => {
@@ -99,7 +88,7 @@ export const CadForm = () =>{
 
                     <Form.Group as={Col} md="12"controlId="formBasicTelephone">
                     <Form.Label id="formlbl">Telefone:</Form.Label>
-                    <Form.Control type="number" onChange={handleChangeTelefone} placeholder="(00)0000-0000" required/>
+                    <Form.Control type="number" onChange={handleChangeTelefone} placeholder="(00)0000-0000" minLength="10" required/>
                     </Form.Group>
 
                     <Form.Group as={Col} md="12" controlId="formBasicEmail">
@@ -109,7 +98,7 @@ export const CadForm = () =>{
 
                     <Form.Group as={Col} md="12" controlId="formBasicEmail">
                     <Form.Label id="formlbl">Cep:</Form.Label>
-                    <Form.Control onChange={handleChangeCep} type="text" placeholder="XXXXXXXX" maxLength="8" required/>
+                    <Form.Control onChange={handleChangeCep} type="text" placeholder="XXXXXXXX" minLength="8" maxLength="8" required/>
                     </Form.Group>
 
                     <Form.Group as={Col} md="12" controlId="formBasicPassword">

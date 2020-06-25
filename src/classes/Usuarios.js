@@ -12,11 +12,17 @@ class Usuario {
         }
         return JSON.parse(localStorage.getItem('usuarios'));
     }
-    update(){
-
+    readUser(userId){
+        const usuarios = this.read();
+        const index = usuarios.findIndex(user => user.id == userId);
+        return usuarios[index];
     }
-    delete(){
-
+    update(dados){
+        const usuarios = this.read();
+        const index = usuarios.findIndex(user => user.id == dados.id);
+        usuarios[index] = dados;
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+        alert("usuário atualizado");
     }
 }
 export default Usuario; 
