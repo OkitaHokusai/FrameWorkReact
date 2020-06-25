@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Conta from '../../classes/Contas';
+import Grafico from '../../components/Grafico.js';
 import {Jumbotron,Row,CardDeck} from 'react-bootstrap';
 import {EntradasCard,
         SaidasCard,
@@ -16,7 +17,6 @@ export const Principal = () => {
     const [entradas, setEntradas] = useState(0);
     const [saidas, setSaidas] = useState(0);
     const [total, setTotal] = useState(0);
-
     useEffect(()=>{
         const contas = objConta.readUser(localStorage.getItem('session'));
         let ativa = 0;
@@ -57,7 +57,9 @@ export const Principal = () => {
         </Jumbotron> 
     </Row>
     <Row>
-        <Jumbotron id="menu">Espaço para o grafico</Jumbotron>
+        <Jumbotron id="menu">
+            <Grafico dados={objConta.readUser(localStorage.getItem('session'))}/>
+        </Jumbotron>
     </Row>
     </Layout>
     </>
