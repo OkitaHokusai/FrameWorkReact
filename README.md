@@ -1,8 +1,15 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Projeto feito com Bootstrap [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Projetinho de React para framework feito por:
+Okita Hokusai - Rafael Ramalho, Front-end
+    LinkedIn: https://www.linkedin.com/in/rafael-ramalho-rosa-58601518a/
+    Instagram: okitahokusai ;
+El Digon - Rodrigo Elias, Back-end;
+    LinkedIn: https://www.linkedin.com/in/rodrigo-elias-b37a351a3/ ;
 
-In the project directory, you can run:
+## Scrpits Disponíveis 
+
+Nesse diretório de projeto, você pode utilizar:
 
 ### `yarn start`
 
@@ -37,7 +44,8 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+
+<!-- ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
@@ -65,4 +73,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 ### `yarn build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify -->
