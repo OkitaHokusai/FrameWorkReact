@@ -1,10 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import {Col,Form,Jumbotron,Button} from 'react-bootstrap';
-import Categoria from '../../classes/Categorias'
-import Conta from '../../classes/Contas'
-import {Navigationbar} from '../../components/Navbar'
-import {Layout} from '../../components/Layout'
+import Categoria from '../../classes/Categorias';
+import Conta from '../../classes/Contas';
+import {Navigationbar} from '../../components/Navbar';
+import {Layout} from '../../components/Layout';
+import CurrencyInput from 'react-currency-masked-input';
+import '../../assets/Form.css';
+
 const H5 = styled.h5`
     color: grey;
     font-weight: normal;
@@ -77,7 +80,7 @@ export const CriarConta = ()=>{
                 
                         <Form.Group as={Col} md="6"controlId="formBasicTelephone">
                         <Form.Label id="formlbl">Valor:</Form.Label>
-                        <Form.Control type="number" onChange={handleChangeValor} required/>
+                        <CurrencyInput as={Form.Control} onChange={handleChangeValor} placeholde="0" required id="valueinput"/>
                         </Form.Group>
                 
                         <Form.Group as={Col} md="6" controlId="formGridState">

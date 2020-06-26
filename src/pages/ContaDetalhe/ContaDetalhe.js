@@ -2,12 +2,15 @@ import React, { useEffect,useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import Conta from '../../classes/Contas';
 import Lancamento from '../../classes/Lancamentos';
-import {Row,Form,Col, Button,Jumbotron as Jumbo, Spinner} from 'react-bootstrap';
+import {Row,Form,Col, Button,Jumbotron as Jumbo} from 'react-bootstrap';
 import {Historicoentrada } from '../../components/ContaCard';
 import styled from 'styled-components';
 import '../../assets/contacard.css';
 import {Navigationbar} from '../../components/Navbar';
 import {Layout} from '../../components/Layout';
+import CurrencyInput from 'react-currency-masked-input';
+import '../../assets/Form.css';
+
 
 const H2 = styled.h5`
     font-family: 'Exo 2', sans-serif;
@@ -99,9 +102,9 @@ export const ContaDetalhe = () => {
         <Jumbo id="categorias-2">
             <form onSubmit={handleSubmit}>
                 <Form.Row>
-                    <Form.Group as={Col} controlId="formGridEmail">
+                    <Form.Group as={Col} controlId="formGridValue">
                         <Form.Label>Valor</Form.Label>
-                        <Form.Control type="number" placeholder="100,01" onChange={handleChangeValor} required/>
+                        <CurrencyInput type="number" onChange={handleChangeValor} placeholder="0" id="#valueinput" required> </CurrencyInput>
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridEmail">
                         <Form.Label>Data</Form.Label>

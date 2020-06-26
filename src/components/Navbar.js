@@ -4,11 +4,12 @@ import { Nav,
 } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
+import { FaSignOutAlt } from 'react-icons/fa';
 
 
 const Styles = styled.div`
     .navbar{
-        background-color: #60107a;
+        background-color: #3f3e40;
         box-shadow: 0px 7px 48px -20px rgba(0,0,0,0.75);
     }
     .navbar-brand,.navbar-nav {
@@ -21,6 +22,11 @@ const Styles = styled.div`
     .navlink{
         color: black;
     }
+    .division{
+        height:15px;
+        background-color: #a259d9;
+    }
+
 `;
 
 
@@ -51,13 +57,15 @@ export const Navigationbar = () => {
         <Navbar>
     <Navbar.Brand ><b>FrameWork</b></Navbar.Brand>
     <Nav className="ml-auto">
-      <Nav.Link id="navlink" onClick={handleOnClickLogout} name="/">Logout</Nav.Link>
       <Nav.Link id="navlink" onClick={handleOnClickLink} name="/Principal">Home</Nav.Link>
       <Nav.Link id="navlink" onClick={handleOnClickLink} name="/Contas">Contas</Nav.Link>
       <Nav.Link id="navlink" onClick={handleOnClickLink} name="/Categorias">Categorias</Nav.Link>
       <Nav.Link id="navlink" onClick={handleOnClickLink} name="/Perfil">Perfil</Nav.Link>
+      <Nav.Link id="navlink" onClick={handleOnClickLogout} name="/">Logout <FaSignOutAlt/> </Nav.Link>
     </Nav>
   </Navbar>
+  <div className="division"></div>
+
   <br/>
     </Styles>
 )}

@@ -20,12 +20,12 @@ const styleCategoria = {
     display: 'flex',
     justifyContent: 'space-between',
     Width: '100%',
-    border: '1px solid black',
     borderRadius: '5px',
     backgroundColor: '#dcdcdc',
     color:'black',
-    padding: '5px'
-
+    padding: '10px',
+    paddingRight:'15px',
+    paddingLeft:'20px',
 }
 
 export const Categorias = () => {
