@@ -10,13 +10,12 @@ import { FaSignOutAlt } from 'react-icons/fa';
 const Styles = styled.div`
     .navbar{
         background-color: #3f3e40;
-        box-shadow: 0px 7px 48px -20px rgba(0,0,0,0.75);
     }
     .navbar-brand,.navbar-nav {
         color: white;
-
+        transition: 1s ;
         &:hover{
-            color: grey;
+            color: #a259d9;
         }
     }
     .navlink{
@@ -25,6 +24,7 @@ const Styles = styled.div`
     .division{
         height:15px;
         background-color: #a259d9;
+        box-shadow: 0px 7px 48px -20px rgba(0,0,0,0.75);
     }
 
 `;

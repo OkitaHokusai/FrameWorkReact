@@ -17,7 +17,8 @@ export const Home = ()=>{
     return(
     <Layout>
         <div id="fontpattern">
-            
+        <br/>
+        <br/>
             <h2>Login</h2>
             <p>Aproxime-se para entrar no sistema</p>
             <LoginForm/>

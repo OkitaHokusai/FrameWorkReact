@@ -7,7 +7,7 @@ import { FaTrash,
          FaSearchPlus,
          FaArrowUp,
          FaArrowDown,
-         FaEnvelope, } from 'react-icons/fa';
+         FaDollarSign, } from 'react-icons/fa';
 import '../assets/contacard.css';
 
 
@@ -47,7 +47,7 @@ export const ContaCard = (props) => {
 
 export const EntradasCard = (props) => (
     
-    <Card className=" text-white" style={{ width: '18rem' }}>
+    <Card className=" text-white text-center" style={{ width: '18rem' }}>
         <Card.Header className="bg-success"><Card.Title>Entradas <FaArrowUp/></Card.Title></Card.Header>
         <Card.Body id="cardbody">
         <Card.Text>
@@ -59,7 +59,7 @@ export const EntradasCard = (props) => (
 
 export const SaidasCard = (props) => (
     
-    <Card className=" text-white" style={{ width: '18rem' }}>
+    <Card className=" text-white text-center" style={{ width: '18rem' }}>
         <Card.Header className="bg-warning"><Card.Title>Saidas <FaArrowDown/></Card.Title></Card.Header>
         <Card.Body id="cardbody">
         <Card.Text >
@@ -72,7 +72,7 @@ export const SaidasCard = (props) => (
 export const AjudaCard = (props) => (
     
     <Card id="helpcard" className="bg-light text-black" style={{ width: '18rem' }}>
-        <Card.Header id="cardhelp"><Card.Title> Saldo </Card.Title></Card.Header>
+        <Card.Header id="cardhelp"><Card.Title> Saldo <FaDollarSign/> </Card.Title></Card.Header>
         <Card.Body>
             {Number(props.valor).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
         </Card.Body>
@@ -86,16 +86,17 @@ export const SituaCard = (props) => {
     
     <Card  className=" text-black text-center" style={{}}>
         <Card.Header className="bg-success"><Card.Title>Situação </Card.Title></Card.Header>
-        <Card.Body>
-        Positivo! Pelo visto você sabe bem cuidar do seu dinheiro! :)
+        <Card.Body id="cardsituacao">
+            Positivo! Pelo visto você sabe bem cuidar do seu dinheiro! :)
         </Card.Body>
     </Card>
     )}else{
     return(
-        <Card  className="text-black text-center" style={{}}>
-            <Card.Header className="bg-danger"><Card.Title>Situação </Card.Title></Card.Header>
-            <Card.Body>
-            Negativo! tente controlar melhor seus gastos :/
+        <Card  className="text-white  text-id text-center" style={{}}>
+            <Card.Header className="bg-danger" id="dangersituacao"><Card.Title><b>Situação</b> </Card.Title></Card.Header>
+            <Card.Body id="cardsituacao">
+                <b>Cuidado!</b> <br/>
+                Saber controlar o dinheiro é uma virtude.
             </Card.Body>
         </Card>
         )}

@@ -5,7 +5,7 @@ Okita Hokusai - Rafael Ramalho, Front-end<br/>
     LinkedIn: https://www.linkedin.com/in/rafael-ramalho-rosa-58601518a/<br/>
     Instagram: okitahokusai ;<br/>
 El Digon - Rodrigo Elias, Back-end; <br/>
-    LinkedIn: https://www.linkedin.com/in/rodrigo-elias-b37a351a3/<br/> ;
+    LinkedIn: https://www.linkedin.com/in/rodrigo-elias-b37a351a3/;<br/>
 
 ## Scrpits Disponíveis 
 

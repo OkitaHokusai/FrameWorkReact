@@ -7,9 +7,9 @@ import {Form,
         Button,
         Col,
         InputGroup,} from 'react-bootstrap'; 
-// import { FaUserCircle, FaLock, FaPhone } from 'react-icons/fa';
+import InputMask from "react-input-mask";
 import '../../assets/CadForm.css';
-    
+import '../../assets/Form.css';    
     
 
 export const CadForm = () =>{
@@ -74,6 +74,8 @@ export const CadForm = () =>{
 
     return(
         <Layout>
+            <br/>
+            <br/>
             <form action="" onSubmit={handleSubmit}>
                 
                 <Form.Row id="cadform">
@@ -88,7 +90,7 @@ export const CadForm = () =>{
 
                     <Form.Group as={Col} md="12"controlId="formBasicTelephone">
                     <Form.Label id="formlbl">Telefone:</Form.Label>
-                    <Form.Control onChange={handleChangeTelefone} placeholder="(00)0000-0000" mask="(11)1111-1111" minLength="10" maxLength="10" required/>
+                    <InputMask mask="+5\5 99 99999 9999" maskChar={null}  onChange={handleChangeTelefone} placeholder="+00 0000-0000" id="valueinput" required/>
                     </Form.Group>
 
                     <Form.Group as={Col} md="12" controlId="formBasicEmail">
@@ -96,9 +98,9 @@ export const CadForm = () =>{
                     <Form.Control type="email" onChange={handleChangeEmail} placeholder="exemplo@email.com" required/>
                     </Form.Group>
 
-                    <Form.Group as={Col} md="12" controlId="formBasicEmail">
+                    <Form.Group as={Col} md="12" controlId="formBasicCep">
                     <Form.Label id="formlbl">Cep:</Form.Label>
-                    <Form.Control onChange={handleChangeCep} type="text" placeholder="XXXXXXXX" minLength="8" maxLength="8" required/>
+                    <InputMask mask="99999-999" maskChar={null}  onChange={handleChangeCep} placeholder="00000-000" id="valueinput" required/>
                     </Form.Group>
 
                     <Form.Group as={Col} md="12" controlId="formBasicPassword">
