@@ -73,7 +73,7 @@ export const ContaDetalhe = () => {
     }
 
     function handleChangeValor(event){
-        setValor(event.target.value);
+        setValor(event.target.value * 10);
     }
 
     function handleChangeData(event){
@@ -104,7 +104,7 @@ export const ContaDetalhe = () => {
                 <Form.Row>
                     <Form.Group as={Col} controlId="formGridValue">
                         <Form.Label>Valor</Form.Label>
-                        <CurrencyInput type="number" onChange={handleChangeValor} placeholder="0" id="#valueinput" required> </CurrencyInput>
+                        <CurrencyInput className="form-control" type="number" onChange={handleChangeValor} placeholder="0" id="#valueinput" required/>
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridEmail">
                         <Form.Label>Data</Form.Label>

@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import {useHistory} from 'react-router-dom'
-import {Layout} from '../../components/Layout'
-import Usuario from '../../classes/Usuarios'
+import {useHistory} from 'react-router-dom';
+import {Layout} from '../../components/Layout';
+import Usuario from '../../classes/Usuarios';
 import {Form,
         Button,
         Col,
@@ -81,14 +81,14 @@ export const CadForm = () =>{
                     <Form.Group as={Col} md="12" controlId="formBasicEmail">
                     <Form.Label id="formlbl">Nome:</Form.Label>
                     <InputGroup.Prepend>
-                        <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
+                    <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
                     <Form.Control onChange={handleChangeNome} type="text" aria-describedby="inputGroupPrepend" placeholder="Digite seu nome" required/>
                     </InputGroup.Prepend>
                     </Form.Group>
 
                     <Form.Group as={Col} md="12"controlId="formBasicTelephone">
                     <Form.Label id="formlbl">Telefone:</Form.Label>
-                    <Form.Control type="number" onChange={handleChangeTelefone} placeholder="(00)0000-0000" minLength="10" required/>
+                    <Form.Control onChange={handleChangeTelefone} placeholder="(00)0000-0000" mask="(11)1111-1111" minLength="10" maxLength="10" required/>
                     </Form.Group>
 
                     <Form.Group as={Col} md="12" controlId="formBasicEmail">
