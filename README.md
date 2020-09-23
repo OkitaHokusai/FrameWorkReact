@@ -1,6 +1,6 @@
-Projeto feito com Bootstrap [Create React App](https://github.com/facebook/create-react-app).
+Project made with Bootstrap [Create React App](https://github.com/facebook/create-react-app).
 
-## Projetinho de React para framework feito por:
+## Developers:
 Okita Hokusai - Rafael Ramalho, Front-end & Backend <br/>
     LinkedIn: https://www.linkedin.com/in/rafael-ramalho-rosa-58601518a/<br/>
     Instagram: okitahokusai ;<br/>
@@ -8,8 +8,7 @@ El Digon - Rodrigo Elias, Back-end; <br/>
     LinkedIn: https://www.linkedin.com/in/rodrigo-elias-b37a351a3/;<br/>
 
 ## Scripts Disponíveis 
-
-Nesse diretório de projeto, você pode utilizar:
+In this directory you can use:
 
 ### `yarn start`
 
